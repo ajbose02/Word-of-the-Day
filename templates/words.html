@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block header %}
+  <h1>Words</h1>
+{% endblock header %}
+
+{% block content %}
+
+  <ul>
+    {% for word in words %}
+      <li>
+        <h3>
+          <a href="/words/{{word.date_added.year}}/{{word.date_added.month}}/{{word.date_added.day}}">{{word.word}} ({{word.date_added}})</a>
+        </h3>
+      </li>
+    {% empty %}
+      <li>No words have been added yet.</li>
+    {% endfor %}
+  </ul>
+
+{% endblock content %}
