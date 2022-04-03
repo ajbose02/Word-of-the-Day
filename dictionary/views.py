@@ -15,7 +15,7 @@ def index(request):
     if type(wod)== str:
         w = json.loads(wod)
     else:
-        w = wod
+        w = {"word": "qualtagh", "definations": [{"text": "The first person one encounters, either after leaving one\'s home or (sometimes) outside one\'s home, especially on New Year\'s Day.", "source": "wiktionary", "partOfSpeech": "noun"}, {"text": "A Christmas or New Year\'s ceremony, in the Isle of Man; one who takes part in the ceremony. See the first extract.", "source": "century", "partOfSpeech": "noun"}]}
 
     word = w['word'].capitalize()
     defin_dictionary = w['definations'][0]
